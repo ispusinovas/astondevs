@@ -14,15 +14,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <distributionManagement>
-        <repository>
-            <id>diasoft_repo</id>
-            <url>http://maven:8080/maven2/repo/</url>
-            <uniqueVersion>true</uniqueVersion>
-        </repository>
-    </distributionManagement>
-
-
     <dependencies>
         <!-- Source: https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
