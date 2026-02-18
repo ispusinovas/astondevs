@@ -20,7 +20,6 @@ public class ArithmeticCalculatorTest {
         calculator = new ArithmeticCalculator();
     }
 
-    // Тесты для сложения
     @Test
     @DisplayName("Сложение положительных чисел")
     void testAddPositiveNumbers() {
@@ -42,7 +41,6 @@ public class ArithmeticCalculatorTest {
         assertEquals(2, calculator.add(5, -3), "5 + (-3) должно быть 2");
     }
 
-    // Тесты для вычитания
     @Test
     @DisplayName("Вычитание положительных чисел")
     void testSubtractPositiveNumbers() {
@@ -64,7 +62,6 @@ public class ArithmeticCalculatorTest {
         assertEquals(4, calculator.subtract(-11, -15), "-11 - (-15) должно быть 4");
     }
 
-    // Тесты для умножения
     @Test
     @DisplayName("Умножение положительных чисел")
     void testMultiplyPositiveNumbers() {
@@ -86,7 +83,6 @@ public class ArithmeticCalculatorTest {
         assertEquals(15, calculator.multiply(-5, -3), "(-5) * (-3) должно быть 15");
     }
 
-    // Тесты для деления
     @Test
     @DisplayName("Деление положительных чисел")
     void testDividePositiveNumbers() {
