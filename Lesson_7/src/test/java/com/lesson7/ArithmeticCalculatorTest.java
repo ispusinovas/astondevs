@@ -3,6 +3,7 @@ package com.lesson7;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import static org.testng.Assert.*;
 
 public class ArithmeticCalculatorTest {
@@ -14,7 +15,6 @@ public class ArithmeticCalculatorTest {
         calculator = new ArithmeticCalculator();
     }
 
-    // Тесты сложения
     @Test(description = "Сложение положительных чисел")
     public void testAddPositiveNumbers() {
         assertEquals(calculator.add(5, 3), 8);
@@ -33,7 +33,6 @@ public class ArithmeticCalculatorTest {
         assertEquals(calculator.add(5, -3), 2);
     }
 
-    // Тесты вычитания
     @Test(description = "Вычитание положительных чисел")
     public void testSubtractPositiveNumbers() {
         assertEquals(calculator.subtract(5, 3), 2);
@@ -46,7 +45,6 @@ public class ArithmeticCalculatorTest {
         assertEquals(calculator.subtract(0, 5), -5);
     }
 
-    // Тесты умножения
     @Test(description = "Умножение положительных чисел")
     public void testMultiplyPositiveNumbers() {
         assertEquals(calculator.multiply(5, 3), 15);
@@ -65,7 +63,6 @@ public class ArithmeticCalculatorTest {
         assertEquals(calculator.multiply(-5, -3), 15);
     }
 
-    // Тесты деления
     @Test(description = "Деление положительных чисел")
     public void testDividePositiveNumbers() {
         assertEquals(calculator.divide(6, 3), 2.0, 0.001);
@@ -83,29 +80,17 @@ public class ArithmeticCalculatorTest {
         assertEquals(calculator.divide(0, 5), 0.0, 0.001);
     }
 
-    @Test(
-            description = "Деление на ноль должно выбросить исключение",
-            expectedExceptions = ArithmeticException.class
-    )
+    @Test(description = "Деление на ноль должно выбросить исключение", expectedExceptions = ArithmeticException.class)
     public void testDivideByZero() {
         calculator.divide(5, 0);
     }
 
-    // Параметризованный тест через DataProvider
     @DataProvider(name = "additionData")
     public Object[][] additionData() {
-        return new Object[][] {
-                {1, 1, 2},
-                {10, 20, 30},
-                {-5, 5, 0},
-                {100, 200, 300}
-        };
+        return new Object[][]{{1, 1, 2}, {10, 20, 30}, {-5, 5, 0}, {100, 200, 300}};
     }
 
-    @Test(
-            dataProvider = "additionData",
-            description = "Параметризованный тест сложения"
-    )
+    @Test(dataProvider = "additionData", description = "Параметризованный тест сложения")
     public void testAddParameterized(int a, int b, int expected) {
         assertEquals(calculator.add(a, b), expected);
     }

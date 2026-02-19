@@ -2,6 +2,7 @@ package com.lesson7;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import static org.testng.Assert.*;
 
 public class FactorialTest {
@@ -39,10 +40,7 @@ public class FactorialTest {
         assertEquals(result, 3628800);
     }
 
-    @Test(
-            description = "Факториал отрицательного числа должен выбросить исключение",
-            expectedExceptions = IllegalArgumentException.class
-    )
+    @Test(description = "Факториал отрицательного числа должен выбросить исключение", expectedExceptions = IllegalArgumentException.class)
     public void testFactorialOfNegativeNumber() {
         calculator.calculateFactorial(-5);
     }

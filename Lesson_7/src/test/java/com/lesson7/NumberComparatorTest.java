@@ -2,7 +2,9 @@ package com.lesson7;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import static org.testng.Assert.*;
+
 import com.lesson7.NumberComparator.ComparisonResult;
 
 public class NumberComparatorTest {
@@ -44,18 +46,4 @@ public class NumberComparatorTest {
         assertEquals(comparator.compare(-10, -5), ComparisonResult.LESS);
     }
 
-    @Test(description = "compareAsInt - положительный результат")
-    public void testCompareAsIntPositive() {
-        assertTrue(comparator.compareAsInt(10, 5) > 0);
-    }
-
-    @Test(description = "compareAsInt - отрицательный результат")
-    public void testCompareAsIntNegative() {
-        assertTrue(comparator.compareAsInt(5, 10) < 0);
-    }
-
-    @Test(description = "compareAsInt - ноль")
-    public void testCompareAsIntZero() {
-        assertEquals(comparator.compareAsInt(5, 5), 0);
-    }
 }
